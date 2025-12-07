@@ -2,11 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuLogo from "./Images/menu.svg";
 import CloseLogo from "./Images/close.svg";
-import HomeIcon from "./Images/home2.svg";
 
 const NavBar = () => {
-  const [showBackToHome, setShowBackToHome] = useState(false);
-
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -25,36 +22,8 @@ const NavBar = () => {
     if (sideBar) sideBar.style.display = "flex";
   };
 
-  useEffect(() => {
-    const homeSection = document.getElementById("home");
-    if (!homeSection) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowBackToHome(!entry.isIntersecting);
-      },
-      {
-        threshold: 0.5, 
-      }
-    );
-
-    observer.observe(homeSection);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
-      
-      {showBackToHome && (
-        <button
-          className="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 z-[998] group"
-          onClick={() => scrollToSection("navbar")}
-        >
-          <img src={HomeIcon} className="h-6 w-6 group-hover:rotate-12 transition-transform" />
-        </button>
-      )}
-
       <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm" id="navbar">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-row items-center justify-between">
           {/* Logo/Name */}

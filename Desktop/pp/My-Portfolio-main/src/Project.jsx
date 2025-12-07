@@ -4,6 +4,7 @@ import feedbackImg from './Images/feedback.png'
 import ServSyncImg from './Images/ServSync.png'
 import veegoImg from './Images/veego.png'
 import habbitImg from './Images/habbit.png'
+import deliveryImg from './Images/delivery.png'
 
 
 const Projects = () => {
@@ -36,7 +37,7 @@ const Projects = () => {
       title: "Delivery App Business Platform",
       description:
         "A comprehensive delivery business platform for end-to-end delivery operations, from order management to real-time tracking and customer notifications.",
-      image: feedbackImg,
+      image: deliveryImg,
       techStack: ["JavaScript", "Business Logic", "API Integration"],
       link: "https://github.com/IrushaDilshan/Delivery-App", 
     },

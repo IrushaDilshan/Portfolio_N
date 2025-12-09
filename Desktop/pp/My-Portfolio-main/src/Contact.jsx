@@ -62,7 +62,7 @@ const Contact = () => {
         </svg>
       ),
       title: "Instagram",
-      value: "@iru_sha",
+      value: "@iru__sha",
       buttonText: "Follow",
       link: "https://www.instagram.com/iru__sha",
     },
@@ -73,7 +73,7 @@ const Contact = () => {
         </svg>
       ),
       title: "GitHub",
-      value: "@IrushaDilshan",
+      value: "@irushadilshan",
       buttonText: "View Code",
       link: "https://github.com/irushadilshan",
     },

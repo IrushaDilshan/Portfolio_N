@@ -42,7 +42,7 @@ const Contact = () => {
       title: "LinkedIn",
       value: "Connect with me",
       buttonText: "Connect",
-      link: "https://www.linkedin.com/in/irusha-dilshan",
+      link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/",
     },
     {
       icon: (
@@ -53,7 +53,7 @@ const Contact = () => {
       title: "Facebook",
       value: "Follow me",
       buttonText: "Follow",
-      link: "https://www.facebook.com",
+      link: "https://www.facebook.com/irusha.dilshan.vidanapathirana",
     },
     {
       icon: (
@@ -64,7 +64,7 @@ const Contact = () => {
       title: "Instagram",
       value: "@iru_sha",
       buttonText: "Follow",
-      link: "https://www.instagram.com/iru_sha",
+      link: "https://www.instagram.com/iru__sha",
     },
     {
       icon: (
@@ -75,7 +75,7 @@ const Contact = () => {
       title: "GitHub",
       value: "@IrushaDilshan",
       buttonText: "View Code",
-      link: "https://github.com/IrushaDilshan",
+      link: "https://github.com/irushadilshan",
     },
   ];
 

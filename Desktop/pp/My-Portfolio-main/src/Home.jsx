@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Image1 from './Images/image1.jpg'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import CV from './CV/Irusha_Dilshan_CV.pdf'
+import CV from './CV/irusha cv.pdf'
 
 const Home = () => {
 
@@ -18,7 +18,7 @@ const Home = () => {
 
     const link = document.createElement("a");
     link.href = CV;
-    link.download = "Irusha_Dilshan_CV.pdf";
+    link.download = "irusha cv.pdf";
     link.click();
 
   }

@@ -1,0 +1,1 @@
+const s="/Portfolio_N/assets/feedback-y1sy7iHv.png",o="/Portfolio_N/assets/ServSync-Dh66on_C.png",e="/Portfolio_N/assets/veego-KQXPyz0Q.png",t="/Portfolio_N/assets/habbit-CSUWPoGs.png",a="/Portfolio_N/assets/delivery-DAAKWaQy.png";export{o as S,a as d,s as f,t as h,e as v};

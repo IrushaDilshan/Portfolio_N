@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import feedbackImg from './Images/feedback.png'
 import ServSyncImg from './Images/ServSync.png'
@@ -8,6 +8,11 @@ import deliveryImg from './Images/delivery.png'
 
 
 const Projects = () => {
+  const [loadedImages, setLoadedImages] = useState({});
+
+  const handleImageLoad = (title) => {
+    setLoadedImages(prev => ({ ...prev, [title]: true }));
+  };
   const projects = [
     {
       title: "VeeGo - Vehicle Rental App",
@@ -75,11 +80,23 @@ const Projects = () => {
               className="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
             
-              <div className="relative w-full h-48 overflow-hidden">
+              <div className="relative w-full h-48 overflow-hidden bg-gray-200">
+                {!loadedImages[project.title] && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="animate-pulse flex flex-col items-center">
+                      <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
+                      <p className="mt-2 text-gray-500 text-sm">Loading...</p>
+                    </div>
+                  </div>
+                )}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  onLoad={() => handleImageLoad(project.title)}
+                  className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${
+                    loadedImages[project.title] ? 'opacity-100' : 'opacity-0'
+                  }`}
                 />
               </div>
 

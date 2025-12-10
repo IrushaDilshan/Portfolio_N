@@ -3,6 +3,7 @@ import Image1 from './Images/image1.jpg'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CV from './CV/irusha cv.pdf'
+import ProResume from './CV/Professional Modern CV Resume.pdf'
 
 const Home = () => {
 
@@ -19,6 +20,15 @@ const Home = () => {
     const link = document.createElement("a");
     link.href = CV;
     link.download = "Irusha_Dilshan_Resume.pdf";
+    link.click();
+
+  }
+
+  function downloadProResume(){
+
+    const link = document.createElement("a");
+    link.href = ProResume;
+    link.download = "Irusha_Dilshan_Professional_Resume.pdf";
     link.click();
 
   }
@@ -61,6 +71,7 @@ const Home = () => {
             </div>
 
             <button onClick={downloadCV} className='bg-black text-white w-40 h-10 mt-5 rounded-xl cursor-pointer font-bold'>Download Resume</button>
+            <button onClick={downloadProResume} className='bg-white text-black border border-black w-56 h-10 mt-3 rounded-xl cursor-pointer font-bold'>Download Professional Resume</button>
 
         </div>
         

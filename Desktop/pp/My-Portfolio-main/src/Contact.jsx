@@ -150,7 +150,9 @@ const Contact = () => {
             Prefer to send a message directly?
           </p>
           <a
-            href="mailto:irushadilsha2@gmail.com"
+            href={
+              `mailto:irushadilsha2@gmail.com?subject=${encodeURIComponent('Inquiry from Portfolio')}&body=${encodeURIComponent('Hi Irusha,%0D%0A%0D%0AI found your portfolio and would like to get in touch about ...%0D%0A%0D%0AName:%0D%0ACompany:%0D%0AProject/Reason:%0D%0A%0D%0ABest regards,')}`
+            }
             className="inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

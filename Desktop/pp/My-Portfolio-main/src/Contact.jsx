@@ -53,7 +53,7 @@ const Contact = () => {
       title: "Facebook",
       value: "Follow me",
       buttonText: "Follow",
-      link: "https://www.facebook.com/irusha.dilshan.vidanapathirana",
+      link: "https://www.facebook.com/irusha.dilshan.vidanapathirana/",
     },
     {
       icon: (
@@ -64,7 +64,7 @@ const Contact = () => {
       title: "Instagram",
       value: "@iru__sha",
       buttonText: "Follow",
-      link: "https://www.instagram.com/iru__sha",
+      link: "https://www.instagram.com/iru__sha/",
     },
     {
       icon: (
@@ -75,7 +75,7 @@ const Contact = () => {
       title: "GitHub",
       value: "@irushadilshan",
       buttonText: "View Code",
-      link: "https://github.com/irushadilshan",
+      link: "https://github.com/irushadilshan/",
     },
   ];
 
@@ -104,8 +104,8 @@ const Contact = () => {
             <a
               key={index}
               href={method.link}
-              target={method.title !== "Email" && method.title !== "Phone" ? "_blank" : "_self"}
-              rel="noopener noreferrer"
+              target={method.title !== "Email" && method.title !== "Phone" ? "_blank" : undefined}
+              rel={method.title !== "Email" && method.title !== "Phone" ? "noopener noreferrer" : undefined}
               data-aos="fade-up"
               data-aos-delay={index * 50}
               className="group relative bg-white border border-gray-200 rounded-xl p-5 hover:shadow-xl hover:border-gray-300 transition-all duration-500 overflow-hidden flex flex-col items-center text-center"

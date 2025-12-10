@@ -18,7 +18,7 @@ const Home = () => {
 
     const link = document.createElement("a");
     link.href = CV;
-    link.download = "irusha cv.pdf";
+    link.download = "Irusha_Dilshan_Resume.pdf";
     link.click();
 
   }
@@ -60,7 +60,7 @@ const Home = () => {
               Mobile App Specialist | MERN Stack Developer<br/> Building Innovative Digital Solutions
             </div>
 
-            <button onClick={downloadCV} className='bg-black text-white w-40 h-10 mt-5 rounded-xl cursor-pointer font-bold'>Download CV</button>
+            <button onClick={downloadCV} className='bg-black text-white w-40 h-10 mt-5 rounded-xl cursor-pointer font-bold'>Download Resume</button>
 
         </div>
         

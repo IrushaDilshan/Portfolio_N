@@ -15,23 +15,7 @@ const Home = () => {
     });
   }, []);
 
-  function downloadCV(){
-
-    const link = document.createElement("a");
-    link.href = CV;
-    link.download = "Irusha_Dilshan_Resume.pdf";
-    link.click();
-
-  }
-
-  function downloadProResume(){
-
-    const link = document.createElement("a");
-    link.href = ProResume;
-    link.download = "Irusha_Dilshan_Professional_Resume.pdf";
-    link.click();
-
-  }
+  // Downloads are handled via <a download> links below for better semantics
 
   return (
     <div id='home'
@@ -70,8 +54,43 @@ const Home = () => {
               Mobile App Specialist | MERN Stack Developer<br/> Building Innovative Digital Solutions
             </div>
 
-            <button onClick={downloadCV} className='bg-black text-white w-40 h-10 mt-5 rounded-xl cursor-pointer font-bold'>Download Resume</button>
-            <button onClick={downloadProResume} className='bg-white text-black border border-black w-56 h-10 mt-3 rounded-xl cursor-pointer font-bold'>Download Professional Resume</button>
+            <div className='mt-6 flex gap-3 max-md:flex-col max-md:w-[60%] max-md:items-center'>
+              <a
+                href={CV}
+                download="Irusha_Dilshan_Resume.pdf"
+                className='group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-white bg-gradient-to-r from-gray-900 via-black to-gray-900 shadow-lg shadow-gray-900/20 hover:from-black hover:to-gray-800 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900'
+                aria-label='Download Professional Resum'
+              >
+                <span>Download Professional Resum</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className='h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5'
+                >
+                  <path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L11 12.586V4a1 1 0 0 1 1-1Z" />
+                  <path d="M5 20a1 1 0 0 1 0-2h14a1 1 0 1 1 0 2H5Z" />
+                </svg>
+              </a>
+
+              <a
+                href={ProResume}
+                download="Irusha_Dilshan_Professional_Resume.pdf"
+                className='group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-gray-900 border border-gray-300 bg-white/80 backdrop-blur hover:bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400'
+                aria-label='Download Resum'
+              >
+                <span>Download Resum</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className='h-4 w-4 text-gray-700 transition-transform duration-200 group-hover:translate-y-0.5'
+                >
+                  <path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L11 12.586V4a1 1 0 0 1 1-1Z" />
+                  <path d="M5 20a1 1 0 0 1 0-2h14a1 1 0 1 1 0 2H5Z" />
+                </svg>
+              </a>
+            </div>
 
         </div>
         

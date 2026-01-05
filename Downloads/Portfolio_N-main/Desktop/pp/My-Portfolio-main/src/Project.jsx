@@ -20,7 +20,7 @@ const Projects = () => {
         "VeeGo is a modern mobile application for vehicle rentals. Find, book, and rent bikes, cars, or vans instantly through your mobile device with an intuitive interface.",
       image: veegoImg,
       techStack: ["Kotlin", "Android Studio", "Material Design"],
-      link: "https://github.com/IrushaDilshan/Vehicle-Rental-Android-App-VeeGo-", 
+      link: "https://github.com/IrushaDilshan/Vehicle-Rental-Android-App-VeeGo-",
     },
     {
       title: "Habit Tracker App",
@@ -28,7 +28,7 @@ const Projects = () => {
         "A comprehensive habit tracking application built with Kotlin. Helps users build better habits and track their daily progress with meaningful insights.",
       image: habbitImg,
       techStack: ["Kotlin", "Android SDK", "SQLite"],
-      link: "https://github.com/IrushaDilshan/Habit-tracker-app", 
+      link: "https://github.com/IrushaDilshan/Habit-tracker-app",
     },
     {
       title: "ServSync - Service Management",
@@ -36,7 +36,7 @@ const Projects = () => {
         "ServSync is an innovative service management platform that streamlines business operations and enhances customer service delivery through modern technology.",
       image: ServSyncImg,
       techStack: ["MERN Stack", "React.js", "Node.js", "MongoDB"],
-      link: "https://github.com/IrushaDilshan", 
+      link: "https://github.com/IrushaDilshan",
     },
     {
       title: "Delivery App Business Platform",
@@ -44,7 +44,7 @@ const Projects = () => {
         "A comprehensive delivery business platform for end-to-end delivery operations, from order management to real-time tracking and customer notifications.",
       image: deliveryImg,
       techStack: ["JavaScript", "Business Logic", "API Integration"],
-      link: "https://github.com/IrushaDilshan/Delivery-App", 
+      link: "https://github.com/IrushaDilshan/Delivery-App",
     },
     {
       title: "Customer Feedback Management",
@@ -52,9 +52,9 @@ const Projects = () => {
         "This system empowers customers to provide feedback and raise service-related complaints, allowing management to monitor service quality and track issue resolution.",
       image: feedbackImg,
       techStack: ["JavaScript", "Web Technologies", "Database Management"],
-      link: "https://github.com/IrushaDilshan/Customer-Complaints-Feedback-Management-", 
+      link: "https://github.com/IrushaDilshan/Customer-Complaints-Feedback-Management-",
     },
-    
+
   ];
 
   return (
@@ -63,7 +63,7 @@ const Projects = () => {
       className="w-full min-h-screen bg-white py-16 flex items-center"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-       
+
         <div className="mb-10 text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
             Projects
@@ -79,7 +79,7 @@ const Projects = () => {
               key={project.title}
               className="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
-            
+
               <div className="relative w-full h-48 overflow-hidden bg-gray-200">
                 {!loadedImages[project.title] && (
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -94,9 +94,8 @@ const Projects = () => {
                   alt={project.title}
                   loading="lazy"
                   onLoad={() => handleImageLoad(project.title)}
-                  className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${
-                    loadedImages[project.title] ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${loadedImages[project.title] ? 'opacity-100' : 'opacity-0'
+                    }`}
                 />
               </div>
 
@@ -108,7 +107,7 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-             
+
                 {project.techStack && (
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.techStack.map((tech) => (

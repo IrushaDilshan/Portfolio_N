@@ -41,12 +41,12 @@ const Skills = () => {
   ];
 
   return (
-    <section 
+    <section
       id="skills"
       className="w-full min-h-screen  flex items-center pb-20"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-       
+
         <div className="mb-10 text-center" data-aos="fade-down">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
             Skills
@@ -62,7 +62,7 @@ const Skills = () => {
               key={skill.name}
               className="group flex flex-col items-center justify-center rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-6"
               data-aos="zoom-in"
-              data-aos-delay={index * 100} 
+              data-aos-delay={index * 100}
             >
               <div className="h-20 w-20 mb-4 flex items-center justify-center">
                 <img

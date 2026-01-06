@@ -2,8 +2,7 @@ import React, { useEffect } from 'react'
 import Image1 from './Images/irusha_user_upload.jpg'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import CV from './CV/irusha cv.pdf'
-import ProResume from './CV/Professional Modern CV Resume.pdf'
+import Resume from './CV/Irusha-Resume.pdf'
 import MatrixBackground from './MatrixBackground';
 
 const Home = () => {
@@ -47,10 +46,10 @@ const Home = () => {
 
         <div className='mt-8 flex gap-4 justified-center w-full justify-center max-md:flex-col max-md:w-[80%] max-md:items-center'>
           <a
-            href={ProResume}
-            download="Irusha_Dilshan_Professional_Resume.pdf"
+            href={Resume}
+            download="Irusha_Resume.pdf"
             className='group inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-white bg-gray-900 shadow-lg hover:bg-black hover:shadow-xl hover:-translate-y-1 transition-all duration-300'
-            aria-label='Download Professional Resume'
+            aria-label='Download Resume'
           >
             <span>Download CV</span>
             <svg
@@ -58,24 +57,6 @@ const Home = () => {
               viewBox="0 0 24 24"
               fill="currentColor"
               className='h-5 w-5 transition-transform duration-200 group-hover:translate-y-0.5'
-            >
-              <path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L11 12.586V4a1 1 0 0 1 1-1Z" />
-              <path d="M5 20a1 1 0 0 1 0-2h14a1 1 0 1 1 0 2H5Z" />
-            </svg>
-          </a>
-
-          <a
-            href={CV}
-            download="Irusha_Dilshan_Resume.pdf"
-            className='group inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-gray-700 bg-white border border-gray-200 shadow-md hover:bg-gray-50 hover:text-gray-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
-            aria-label='Download Resume'
-          >
-            <span>Resume</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className='h-5 w-5 text-gray-500 group-hover:text-gray-900 transition-colors duration-200'
             >
               <path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L11 12.586V4a1 1 0 0 1 1-1Z" />
               <path d="M5 20a1 1 0 0 1 0-2h14a1 1 0 1 1 0 2H5Z" />

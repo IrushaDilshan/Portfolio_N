@@ -51,7 +51,7 @@ const Home = () => {
             className='group inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-white bg-gray-900 shadow-lg hover:bg-black hover:shadow-xl hover:-translate-y-1 transition-all duration-300'
             aria-label='Download Resume'
           >
-            <span>Download CV</span>
+            <span>Download Resume</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

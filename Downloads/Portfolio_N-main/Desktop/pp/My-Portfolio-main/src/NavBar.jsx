@@ -4,164 +4,128 @@ import MenuLogo from "./Images/menu.svg";
 import CloseLogo from "./Images/close.svg";
 
 const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
     }
-  };
-
-  const handleMenuClick = () => {
-    console.log("Menu clicked");
-    const sideBar = document.getElementById("sideBar");
-    if (sideBar) sideBar.style.display = "none";
-  };
-
-  const getSideBar = () => {
-    const sideBar = document.getElementById("sideBar");
-    if (sideBar) sideBar.style.display = "flex";
   };
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm" id="navbar">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-row items-center justify-between">
-          {/* Logo/Name */}
-          <div className="flex items-center">
-            <h1 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform cursor-pointer">
+      <div className={`fixed left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "top-4" : "top-0 lg:top-6"
+        } flex justify-center px-4`}>
+        <div
+          className={`w-full max-w-6xl transition-all duration-300 rounded-2xl border ${scrolled
+            ? "bg-white/80 backdrop-blur-xl border-gray-200 shadow-lg py-2.5 px-4"
+            : "bg-white/50 backdrop-blur-lg border-white/20 shadow-sm py-3 px-6"
+            } flex items-center justify-between`}
+        >
+          <div
+            className="group cursor-pointer flex items-center gap-2"
+            onClick={() => scrollToSection("home")}
+          >
+            <h1 className="text-xl font-bold text-gray-800 tracking-tight group-hover:text-black transition-colors duration-300">
               Irusha Dilshan
             </h1>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="flex flex-row items-center gap-1 max-md:hidden">
-            <button
-              className="px-5 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:bg-blue-50 rounded-lg"
-              onClick={() => scrollToSection("home")}
-            >
-              Home
-            </button>
-            <button
-              className="px-5 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:bg-blue-50 rounded-lg"
-              onClick={() => scrollToSection("aboutMe")}
-            >
-              About
-            </button>
-            <button
-              className="px-5 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:bg-blue-50 rounded-lg"
-              onClick={() => scrollToSection("skills")}
-            >
-              Skills
-            </button>
-            <button
-              className="px-5 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:bg-blue-50 rounded-lg"
-              onClick={() => scrollToSection("projects")}
-            >
-              Projects
-            </button>
-            <button
-              className="px-5 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 hover:bg-blue-50 rounded-lg"
-              onClick={() => scrollToSection("certificates")}
-            >
-              Certificates
-            </button>
-            <button
-              className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 ml-2"
-              onClick={() => scrollToSection("contact")}
-            >
-              Contact
-            </button>
+          <div className="hidden md:flex items-center gap-1 bg-white/40 rounded-full p-1 border border-white/20 backdrop-blur-sm">
+            {[
+              { id: "home", label: "Home" },
+              { id: "aboutMe", label: "About" },
+              { id: "skills", label: "Skills" },
+              { id: "projects", label: "Projects" },
+              { id: "certificates", label: "Certificates" },
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-full hover:bg-white transition-all duration-300"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="max-md:flex hidden">
+          <div className="flex items-center gap-3">
             <button
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              onClick={getSideBar}
+              onClick={() => scrollToSection("contact")}
+              className="hidden md:block px-6 py-2.5 text-sm font-semibold text-white bg-gray-900 hover:bg-black rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
             >
-              <img src={MenuLogo} className="w-6 h-6" id="hambergerMenu" />
+              Contact Me
+            </button>
+
+            <button
+              className="md:hidden p-2 text-gray-600 hover:bg-black/5 rounded-xl transition-colors"
+              onClick={() => setIsMenuOpen(true)}
+            >
+              <img src={MenuLogo} alt="Menu" className="w-6 h-6 opacity-70" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Spacer for fixed navbar */}
-      <div className="h-20"></div>
+      <div className="h-24"></div>
 
-      {/* Mobile Sidebar */}
       <div
-        id="sideBar"
-        className="z-[999] flex flex-col h-screen w-[300px] fixed top-0 right-0 bg-white shadow-2xl hidden animate-slide-in"
+        className={`fixed inset-0 z-[60] bg-black/20 backdrop-blur-sm transition-opacity duration-300 md:hidden ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
+        onClick={() => setIsMenuOpen(false)}
       >
-        {/* Close Button */}
-        <div className="flex justify-between items-center px-6 py-5 border-b border-gray-200">
-          <h2 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Menu
-          </h2>
-          <button
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-            onClick={handleMenuClick}
-          >
-            <img src={CloseLogo} className="w-6 h-6" />
-          </button>
-        </div>
+        <div
+          className={`absolute top-0 right-0 h-full w-[280px] bg-white transition-transform duration-300 ease-out shadow-2xl ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex justify-between items-center p-6 border-b border-gray-100">
+            <h2 className="text-xl font-bold text-gray-900">
+              Menu
+            </h2>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <img src={CloseLogo} alt="Close" className="w-5 h-5 opacity-70" />
+            </button>
+          </div>
 
-        {/* Menu Items */}
-        <div className="flex flex-col px-4 py-6 gap-2">
-          <button
-            onClick={() => {
-              scrollToSection("home");
-              handleMenuClick();
-            }}
-            className="text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => {
-              scrollToSection("aboutMe");
-              handleMenuClick();
-            }}
-            className="text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
-          >
-            About
-          </button>
-          <button
-            onClick={() => {
-              scrollToSection("skills");
-              handleMenuClick();
-            }}
-            className="text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
-          >
-            Skills
-          </button>
-          <button
-            onClick={() => {
-              scrollToSection("projects");
-              handleMenuClick();
-            }}
-            className="text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => {
-              scrollToSection("certificates");
-              handleMenuClick();
-            }}
-            className="text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
-          >
-            Certificates
-          </button>
-          <button
-            onClick={() => {
-              scrollToSection("contact");
-              handleMenuClick();
-            }}
-            className="px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all mt-2"
-          >
-            Contact
-          </button>
+          <div className="flex flex-col p-4 gap-2">
+            {[
+              { id: "home", label: "Home" },
+              { id: "aboutMe", label: "About" },
+              { id: "skills", label: "Skills" },
+              { id: "projects", label: "Projects" },
+              { id: "certificates", label: "Certificates" },
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-left px-4 py-3 text-gray-600 font-medium rounded-xl hover:bg-gray-50 hover:text-gray-900 transition-all duration-300"
+              >
+                {item.label}
+              </button>
+            ))}
+
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="mt-4 w-full py-3 bg-gray-900 text-white font-semibold rounded-xl shadow-md active:scale-95 transition-all"
+            >
+              Contact Me
+            </button>
+          </div>
         </div>
       </div>
     </>

@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import Image1 from './Images/image1.jpg'
+import Image1 from './Images/irusha_ultra.png'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CV from './CV/irusha cv.pdf'
 import ProResume from './CV/Professional Modern CV Resume.pdf'
+import MatrixBackground from './MatrixBackground';
 
 const Home = () => {
 
@@ -19,54 +20,44 @@ const Home = () => {
 
   return (
     <div id='home'
-      className='h-[89vh] w-full  flex flex-row rounded-t-4xl max-md:flex-col max-md:justify-center items-center max-md:h-auto 
+      className='relative overflow-hidden h-[89vh] w-full flex flex-row rounded-t-4xl max-md:flex-col-reverse max-md:justify-center items-center max-md:h-auto 
     max-md:pt-20 max-md:pb-20'
       data-aos="fade-up"
     >
+      <MatrixBackground />
 
       <div
-        className='w-1/2 h-full  flex justify-center items-center max-md:pb-20'
-        data-aos="zoom-in"
-        data-aos-delay="150"
-      >
-        <img
-          src={Image1}
-          className='h-100  w-100 object-cover rounded-full max-xl:h-80 max-xl:w-80 border-gray-800 shadow-lg max-md:w-60 max-md:h-60'
-        />
-      </div>
-
-      <div
-        className='w-1/2 h-full flex flex-col justify-center max-md:w-full max-md:items-center lg:pl-15'
-        data-aos="fade-left"
+        className='relative z-10 w-1/2 h-full flex flex-col justify-center items-center px-10 max-md:px-4 max-md:w-full'
+        data-aos="fade-right"
         data-aos-delay="250"
       >
 
-        <div className='text-3xl font-medium mb-5 max-lg:text-3xl text-gray-800  w-[60%] max-md:text-center'>
+        <div className='text-3xl font-medium mb-5 max-lg:text-3xl text-gray-800  w-full text-center'>
           Hi, I'm
         </div>
-        <div className='text-5xl font-bold mb-5 max-lg:text-4xl  w-[60%] max-md:text-center'>
+        <div className='text-6xl font-bold mb-5 max-lg:text-4xl text-gray-900 w-full text-center leading-tight'>
           Irusha Dilshan
         </div>
-        <div className='text-5xl mb-5 font-bold max-lg:text-4xl  w-[60%] max-md:text-center'>
+        <div className='text-5xl mb-6 font-bold max-lg:text-3xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent w-full text-center'>
           Full-Stack Developer
         </div>
-        <div className='text-2xl max-lg:text-xl text-gray-700  w-[60%] max-md:text-center'>
+        <div className='text-xl text-gray-600 w-[90%] text-center mx-auto'>
           Mobile App Specialist | MERN Stack Developer<br /> Building Innovative Digital Solutions
         </div>
 
-        <div className='mt-6 flex gap-3 max-md:flex-col max-md:w-[60%] max-md:items-center'>
+        <div className='mt-8 flex gap-4 justified-center w-full justify-center max-md:flex-col max-md:w-[80%] max-md:items-center'>
           <a
             href={ProResume}
             download="Irusha_Dilshan_Professional_Resume.pdf"
-            className='group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-white bg-gradient-to-r from-gray-900 via-black to-gray-900 shadow-lg shadow-gray-900/20 hover:from-black hover:to-gray-800 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900'
+            className='group inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-white bg-gray-900 shadow-lg hover:bg-black hover:shadow-xl hover:-translate-y-1 transition-all duration-300'
             aria-label='Download Professional Resume'
           >
-            <span>Download Professional Resume</span>
+            <span>Download CV</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className='h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5'
+              className='h-5 w-5 transition-transform duration-200 group-hover:translate-y-0.5'
             >
               <path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L11 12.586V4a1 1 0 0 1 1-1Z" />
               <path d="M5 20a1 1 0 0 1 0-2h14a1 1 0 1 1 0 2H5Z" />
@@ -76,15 +67,15 @@ const Home = () => {
           <a
             href={CV}
             download="Irusha_Dilshan_Resume.pdf"
-            className='group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-gray-900 border border-gray-300 bg-white/80 backdrop-blur hover:bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400'
+            className='group inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-gray-700 bg-white border border-gray-200 shadow-md hover:bg-gray-50 hover:text-gray-900 hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
             aria-label='Download Resume'
           >
-            <span>Download Resume</span>
+            <span>Resume</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className='h-4 w-4 text-gray-700 transition-transform duration-200 group-hover:translate-y-0.5'
+              className='h-5 w-5 text-gray-500 group-hover:text-gray-900 transition-colors duration-200'
             >
               <path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L11 12.586V4a1 1 0 0 1 1-1Z" />
               <path d="M5 20a1 1 0 0 1 0-2h14a1 1 0 1 1 0 2H5Z" />
@@ -92,6 +83,18 @@ const Home = () => {
           </a>
         </div>
 
+      </div>
+
+      <div
+        className='relative z-10 w-1/2 h-full flex justify-end items-end max-md:w-full max-md:justify-center'
+        data-aos="fade-left"
+        data-aos-delay="150"
+      >
+        <img
+          src={Image1}
+          alt="Irusha Dilshan pointer-events-none"
+          className='w-auto h-[95%] max-h-[850px] object-contain max-md:w-[90%] max-md:h-auto hover:brightness-105 transition-all duration-500'
+        />
       </div>
 
 

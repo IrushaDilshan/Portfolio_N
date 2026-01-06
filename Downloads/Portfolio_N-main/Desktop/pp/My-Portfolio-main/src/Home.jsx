@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Image1 from './Images/irusha_ultra.png'
+import Image1 from './Images/irusha_user_upload.jpg'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CV from './CV/irusha cv.pdf'
@@ -20,14 +20,14 @@ const Home = () => {
 
   return (
     <div id='home'
-      className='relative overflow-hidden h-[89vh] w-full flex flex-row rounded-t-4xl max-md:flex-col-reverse max-md:justify-center items-center max-md:h-auto 
-    max-md:pt-20 max-md:pb-20'
+      className='relative overflow-hidden h-[89vh] w-full flex flex-row rounded-t-4xl max-md:flex-col max-md:overflow-hidden items-center max-md:h-auto 
+    max-md:pt-24 max-md:pb-0'
       data-aos="fade-up"
     >
       <MatrixBackground />
 
       <div
-        className='relative z-10 w-1/2 h-full flex flex-col justify-center items-center px-10 max-md:px-4 max-md:w-full'
+        className='relative z-10 w-1/2 h-full flex flex-col justify-center items-center px-10 max-md:px-4 max-md:w-full max-md:min-h-[50vh]'
         data-aos="fade-right"
         data-aos-delay="250"
       >
@@ -86,14 +86,14 @@ const Home = () => {
       </div>
 
       <div
-        className='relative z-10 w-1/2 h-full flex justify-end items-end max-md:w-full max-md:justify-center'
+        className='relative z-10 w-1/2 h-full flex justify-end items-end max-md:w-full max-md:justify-center max-md:items-end'
         data-aos="fade-left"
         data-aos-delay="150"
       >
         <img
           src={Image1}
           alt="Irusha Dilshan pointer-events-none"
-          className='w-auto h-[95%] max-h-[850px] object-contain max-md:w-[90%] max-md:h-auto hover:brightness-105 transition-all duration-500'
+          className='w-auto h-[95%] max-h-[850px] object-contain max-md:w-[95%] max-md:h-auto hover:brightness-105 transition-all duration-500'
         />
       </div>
 

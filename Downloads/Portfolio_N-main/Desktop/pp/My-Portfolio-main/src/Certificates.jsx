@@ -213,7 +213,7 @@ const Certificates = () => {
 
                 <div className="mt-16 text-center">
                     <a
-                        href="https://www.linkedin.com/in/irusha-dilshan-a15645354/"
+                        href="https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-gray-900 rounded-full hover:bg-black hover:-translate-y-1 hover:shadow-2xl hover:shadow-gray-900/40 active:scale-95"

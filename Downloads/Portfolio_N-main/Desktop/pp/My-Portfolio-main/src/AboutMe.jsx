@@ -24,7 +24,7 @@ const AboutMe = () => {
         data-aos="fade-right "
       >
         <div className=" w-[60%] text-4xl mb-10 font-bold max-lg:text-3xl">
-          AboutMe
+          About Me
         </div>
 
         <div
@@ -32,7 +32,7 @@ const AboutMe = () => {
           data-aos="fade-up"
           data-aos-delay="150"
         >
-          Hi, I'm Irusha Dilshan.
+          Hi, I’m Irusha Dilshan.
         </div>
 
         <div
@@ -40,11 +40,16 @@ const AboutMe = () => {
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          I'm a passionate Full-Stack Developer and Mobile App Specialist currently studying at SLIIT. I specialize in building innovative mobile applications with Kotlin and Android Studio, and I'm actively expanding my expertise in the MERN Stack for full-stack web development.
-
-          <br /><br />
-
-          I've worked on exciting projects like VeeGo (Vehicle Rental App), Habit Tracker, and ServSync. I love creating user-friendly mobile interfaces and solving real-world problems through technology. My interests include Cars 🚗, Traveling 🌍, and Photography 📷.
+          I’m a passionate Full-Stack Developer and Mobile App Specialist currently studying at SLIIT. I specialize in building modern, user-friendly mobile applications using Kotlin, Android Studio, and React Native, and I’m actively expanding my expertise in the MERN Stack for full-stack web development.
+          <br />
+          <br />
+          I’ve worked on projects such as VeeGo (Vehicle Rental App), Habit Tracker, and ServSync (Smart Appointment & Queue Management System for NITF), focusing on clean UI, smooth user experiences, and solving real-world problems through technology. Currently, I’m working on a Sales Management System (Full-Stack Web & Mobile Application) for the National Livestock Development Board (NLDB), where I’m involved in building scalable and efficient solutions.
+          <br />
+          <br />
+          I enjoy creating scalable applications and continuously improving my skills across both mobile and web platforms.
+          <br />
+          <br />
+          My interests include Cars 🚗, Traveling 🌍, and Photography 📷.
         </div>
       </div>
 

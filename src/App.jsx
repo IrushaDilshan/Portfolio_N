@@ -5,27 +5,30 @@ import Home from './Home'
 import AboutMe from './AboutMe'
 import Skills from './Skills'
 import Projects from './Project'
+import Certificates from './Certificates'
 import Contact from './Contact'
 import Footer from './Footer'
 
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-white min-h-screen text-gray-900">
 
-      <NavBar/>
+      <NavBar />
 
-      <Home/>
+      <Home />
 
-      <AboutMe/>
+      <AboutMe />
 
-      <Skills/>
+      <Skills />
 
-      <Projects/>
+      <Projects />
 
-      <Contact/>
+      <Certificates />
 
-      <Footer/>
+      <Contact />
+
+      <Footer />
 
     </div>
   )

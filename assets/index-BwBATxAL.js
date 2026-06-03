@@ -159,4 +159,4 @@ Please change the parent <Route path="${A}"> to <Route path="${A==="/"?"*":`${A}
                   bg-gray-900/60 border border-gray-800
                   hover:border-gray-600 hover:bg-gray-800
                   transition-all
-                `,children:z.jsx("span",{className:"text-gray-300 group-hover:text-white transition-colors",children:i.icon})},i.name))})]})]})})},l2=()=>z.jsxs("div",{children:[z.jsx(qg,{}),z.jsx(Kg,{}),z.jsx(Ig,{}),z.jsx(u1,{}),z.jsx(h1,{}),z.jsx($y,{}),z.jsx(e2,{}),z.jsx(t2,{})]});hv.createRoot(document.getElementById("root")).render(z.jsx(zg,{children:z.jsx(l2,{})}));
+                `,children:z.jsx("span",{className:"text-gray-300 group-hover:text-white transition-colors",children:i.icon})},i.name))})]})]})})},l2=()=>z.jsxs("div",{className:"bg-white min-h-screen text-gray-900",children:[z.jsx(qg,{}),z.jsx(Kg,{}),z.jsx(Ig,{}),z.jsx(u1,{}),z.jsx(h1,{}),z.jsx($y,{}),z.jsx(e2,{}),z.jsx(t2,{})]});hv.createRoot(document.getElementById("root")).render(z.jsx(zg,{children:z.jsx(l2,{})}));

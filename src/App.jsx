@@ -3,6 +3,7 @@ import NavBar from './components/NavBar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import AboutMe from './components/AboutMe'
+import Timeline from './components/Timeline'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Certificates from './components/Certificates'
@@ -19,6 +20,8 @@ const App = () => {
       <Home />
 
       <AboutMe />
+
+      <Timeline />
 
       <Skills />
 

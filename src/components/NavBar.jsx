@@ -46,6 +46,7 @@ const NavBar = () => {
             {[
               { id: "home", label: "Home" },
               { id: "aboutMe", label: "About" },
+              { id: "timeline", label: "Timeline" },
               { id: "skills", label: "Skills" },
               { id: "projects", label: "Projects" },
               { id: "certificates", label: "Certificates" },
@@ -106,6 +107,7 @@ const NavBar = () => {
             {[
               { id: "home", label: "Home" },
               { id: "aboutMe", label: "About" },
+              { id: "timeline", label: "Timeline" },
               { id: "skills", label: "Skills" },
               { id: "projects", label: "Projects" },
               { id: "certificates", label: "Certificates" },

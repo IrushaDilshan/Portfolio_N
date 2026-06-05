@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 // Import Swiper React components
@@ -19,6 +20,34 @@ import mongodbPhpCert from "../assets/images/mongodb_php_certificate.png";
 import mongodbCsharpCert from "../assets/images/mongodb_csharp_certificate.png";
 import mongodbPythonCert from "../assets/images/mongodb_python_certificate.png";
 import mongodbJavaCert from "../assets/images/mongodb_java_certificate.png";
+
+// GlowCard — applies radial glow directly as backgroundImage on the card element.
+// Layers on top of Tailwind's background-color with zero z-index/overflow issues.
+const GlowCard = ({ children, className }) => {
+  const [pos, setPos] = useState({ x: -999, y: -999 });
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      className={className}
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => { setHovered(false); setPos({ x: -999, y: -999 }); }}
+      style={{
+        backgroundImage: hovered
+          ? `radial-gradient(350px circle at ${pos.x}px ${pos.y}px, rgba(99,102,241,0.18), rgba(168,85,247,0.09) 55%, transparent 80%)`
+          : 'none',
+        borderColor: hovered ? 'rgba(99,102,241,0.55)' : undefined,
+        transition: 'border-color 0.3s ease',
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Certificates = () => {
     const [prevEl, setPrevEl] = useState(null);
@@ -193,8 +222,8 @@ const Certificates = () => {
                                     rel="noopener noreferrer"
                                     className="block h-full cursor-pointer"
                                 >
-                                    <div className="certificate-card bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-white/20 h-full flex flex-col transform transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.02] hover:border-blue-300/50">
-                                        <div className="relative h-60 overflow-hidden group">
+                                    <GlowCard className="certificate-card bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-white/20 h-full flex flex-col transform transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.02] hover:border-blue-300/50">
+                                        <div className="relative h-60 overflow-hidden group z-10">
                                             {cert.image ? (
                                                 <img
                                                     src={cert.image}
@@ -215,7 +244,7 @@ const Certificates = () => {
                                             </div>
                                         </div>
 
-                                        <div className="p-6 flex flex-col flex-grow">
+                                        <div className="p-6 flex flex-col flex-grow relative z-10">
                                             <div className="mb-3 flex items-center justify-between">
                                                 <span className="px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider border border-blue-200 shadow-sm">
                                                     {cert.issuer}
@@ -236,7 +265,7 @@ const Certificates = () => {
                                                 </span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </GlowCard>
                                 </a>
                             </SwiperSlide>
                         ))}

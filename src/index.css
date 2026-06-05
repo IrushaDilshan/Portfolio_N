@@ -8,3 +8,47 @@ html, body {
   background-color: #ffffff;
   color: #111827;
 }
+
+/* ===== Mouse-Tracking Card Glow Effect ===== */
+
+/* Background radial glow that follows cursor */
+.glow-card-bg {
+  background: radial-gradient(
+    380px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+    rgba(99, 102, 241, 0.13),
+    rgba(168, 85, 247, 0.07) 50%,
+    transparent 100%
+  );
+  transition: opacity 0.4s ease;
+}
+
+/* Masked border glow overlay */
+.glow-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(
+    260px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+    rgba(99, 102, 241, 0.55),
+    rgba(168, 85, 247, 0.3) 50%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.glow-card:hover .glow-card-border {
+  opacity: 1;
+}
+
+.glow-card:hover .glow-card-bg {
+  opacity: 1;
+}

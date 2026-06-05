@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import MenuLogo from "./Images/menu.svg";
-import CloseLogo from "./Images/close.svg";
+import MenuLogo from "../assets/images/menu.svg";
+import CloseLogo from "../assets/images/close.svg";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

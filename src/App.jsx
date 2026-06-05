@@ -1,13 +1,13 @@
 import React from 'react'
-import NavBar from './NavBar'
+import NavBar from './components/NavBar'
 import { Route, Routes } from 'react-router-dom'
-import Home from './Home'
-import AboutMe from './AboutMe'
-import Skills from './Skills'
-import Projects from './Project'
-import Certificates from './Certificates'
-import Contact from './Contact'
-import Footer from './Footer'
+import Home from './components/Home'
+import AboutMe from './components/AboutMe'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Certificates from './components/Certificates'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 
 const App = () => {

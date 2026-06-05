@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-import feedbackImg from './Images/feedback.png'
-import ServSyncImg from './Images/ServSync.png'
-import veegoImg from './Images/veego.png'
-import habbitImg from './Images/habbit.png'
-import deliveryImg from './Images/delivery.png'
-// import githubLogo from './Images/githublogo.png'
-import projectPlaceholder from './Images/project_placeholder.png'
-import salesImg from './Images/sales_management.png'
-import todoImg from './Images/todo_app.png'
-import libraryImg from './Images/library_management.png'
-import rentalDesignImg from './Images/vehicle_rental_design.png'
+import feedbackImg from '../assets/images/feedback.png'
+import ServSyncImg from '../assets/images/ServSync.png'
+import veegoImg from '../assets/images/veego.png'
+import habbitImg from '../assets/images/habbit.png'
+import deliveryImg from '../assets/images/delivery.png'
+// import githubLogo from '../assets/images/githublogo.png'
+import projectPlaceholder from '../assets/images/project_placeholder.png'
+import salesImg from '../assets/images/sales_management.png'
+import todoImg from '../assets/images/todo_app.png'
+import libraryImg from '../assets/images/library_management.png'
+import rentalDesignImg from '../assets/images/vehicle_rental_design.png'
 
 
 const Projects = () => {

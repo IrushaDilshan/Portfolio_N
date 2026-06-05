@@ -12,9 +12,13 @@ import "swiper/css/navigation";
 // import required modules
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper/modules";
 
-import aimlCert from "./Images/aiml_certificate.png";
-import powerBiCert from "./Images/powerbi_certificate.png";
-import pythonCert from "./Images/python_certificate.png";
+import aimlCert from "../assets/images/aiml_certificate.png";
+import powerBiCert from "../assets/images/powerbi_certificate.png";
+import pythonCert from "../assets/images/python_certificate.png";
+import mongodbPhpCert from "../assets/images/mongodb_php_certificate.png";
+import mongodbCsharpCert from "../assets/images/mongodb_csharp_certificate.png";
+import mongodbPythonCert from "../assets/images/mongodb_python_certificate.png";
+import mongodbJavaCert from "../assets/images/mongodb_java_certificate.png";
 
 const Certificates = () => {
     const [prevEl, setPrevEl] = useState(null);
@@ -50,6 +54,34 @@ const Certificates = () => {
             date: "Issued Dec 2025",
             link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/",
             image: pythonCert,
+        },
+        {
+            title: "Connecting to MongoDB in PHP",
+            issuer: "MongoDB, Inc",
+            date: "Issued Jan 2026",
+            link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/",
+            image: mongodbPhpCert,
+        },
+        {
+            title: "MongoDB CRUD Operations in C#",
+            issuer: "MongoDB, Inc",
+            date: "Issued Jan 2026",
+            link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/",
+            image: mongodbCsharpCert,
+        },
+        {
+            title: "MongoDB Aggregation in Python",
+            issuer: "MongoDB, Inc",
+            date: "Issued Jan 2026",
+            link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/",
+            image: mongodbPythonCert,
+        },
+        {
+            title: "MongoDB CRUD Operations in Java",
+            issuer: "MongoDB, Inc",
+            date: "Issued Jan 2026",
+            link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/",
+            image: mongodbJavaCert,
         },
     ];
 

@@ -27,11 +27,11 @@ export default defineConfig({
       output: {
         manualChunks: {
           'project-images': [
-            './src/Images/feedback.png',
-            './src/Images/ServSync.png',
-            './src/Images/veego.png',
-            './src/Images/habbit.png',
-            './src/Images/delivery.png'
+            './src/assets/images/feedback.png',
+            './src/assets/images/ServSync.png',
+            './src/assets/images/veego.png',
+            './src/assets/images/habbit.png',
+            './src/assets/images/delivery.png'
           ]
         }
       }

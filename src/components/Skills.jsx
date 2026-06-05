@@ -2,18 +2,18 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import HtmlLogo from "../src/Images/htmllogo.png";
-import CssLogo from "../src/Images/csslogo.png";
-import JS from "../src/Images/jslogo.png";
-import Figma from "../src/Images/figmalogo.png";
-import ReactLogo from "../src/Images/reactlogo.png";
-import NodeJS from "../src/Images/node.png";
-import MongoDB from "../src/Images/mongodb.svg";
-import C from "../src/Images/clogo.png";
-import Cplus from "../src/Images/cpplogo.png";
-import Java from "../src/Images/java2-removebg-preview.png";
-import Git from "../src/Images/gitlogo.png";
-import Github from "../src/Images/gitHub.svg";
+import HtmlLogo from "../assets/images/htmllogo.png";
+import CssLogo from "../assets/images/csslogo.png";
+import JS from "../assets/images/jslogo.png";
+import Figma from "../assets/images/figmalogo.png";
+import ReactLogo from "../assets/images/reactlogo.png";
+import NodeJS from "../assets/images/node.png";
+import MongoDB from "../assets/images/mongodb.svg";
+import C from "../assets/images/clogo.png";
+import Cplus from "../assets/images/cpplogo.png";
+import Java from "../assets/images/java2-removebg-preview.png";
+import Git from "../assets/images/gitlogo.png";
+import Github from "../assets/images/gitHub.svg";
 
 const Skills = () => {
 

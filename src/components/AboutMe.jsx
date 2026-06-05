@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Image2 from "./Images/image2.jpg";
+import Image2 from "../assets/images/user_uploaded_profile.jpg";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -56,7 +56,7 @@ const AboutMe = () => {
       <div className="w-1/2 h-full flex flex-col justify-center items-center max-md:mt-20">
         <img
           src={Image2}
-          className="h-100 w-100 object-cover rounded-3xl max-xl:h-80 max-xl:w-80 border-2 border-gray-300 shadow-lg"
+          className="h-96 w-96 object-cover rounded-3xl max-xl:h-80 max-xl:w-80 border-2 border-gray-300 shadow-lg"
         />
       </div>
     </div>

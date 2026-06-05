@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import Image1 from './Images/irusha_user_upload.jpg'
+import Image1 from '../assets/images/irusha_user_upload.jpg'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Resume from './CV/Irusha-Resume.pdf'
+import Resume from '../assets/Irusha-Resume.pdf'
 import MatrixBackground from './MatrixBackground';
 
 const Home = () => {

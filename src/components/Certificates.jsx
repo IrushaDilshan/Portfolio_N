@@ -238,7 +238,7 @@ const Certificates = () => {
                         modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
                         className="w-full py-12 px-4"
                     >
-                        {[...certificates, ...certificates, ...certificates, ...certificates].map((cert, index) => (
+                        {[...certificates, ...certificates].map((cert, index) => (
                             <SwiperSlide key={index} className="!w-[320px] sm:!w-[380px]">
                                 <a
                                     href={cert.link}
@@ -246,7 +246,7 @@ const Certificates = () => {
                                     rel="noopener noreferrer"
                                     className="block h-full cursor-pointer"
                                 >
-                                    <GlowCard className="certificate-card bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-white/20 h-full flex flex-col transform transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.02] hover:border-blue-300/50">
+                                    <GlowCard className="certificate-card bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 h-full flex flex-col transform transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.02] hover:border-blue-300/50">
                                         <div className="relative h-60 overflow-hidden group z-10">
                                             {cert.image ? (
                                                 <img
@@ -262,7 +262,7 @@ const Certificates = () => {
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                             <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
-                                                <span className="inline-block px-4 py-2 bg-white/25 backdrop-blur-lg text-white text-xs font-bold rounded-full border border-white/40 shadow-lg transform group-hover:scale-105 transition-transform duration-300">
+                                                <span className="inline-block px-4 py-2 bg-white/90 text-gray-800 text-xs font-bold rounded-full shadow-lg transform group-hover:scale-105 transition-transform duration-300">
                                                     ✓ Verified Credential
                                                 </span>
                                             </div>
@@ -312,7 +312,7 @@ const Certificates = () => {
             </div>
 
             {/* Custom Styles for Enhanced Animations */}
-            <style jsx>{`
+            <style>{`
                 /* Swiper Pagination Styling */
                 .swiper-pagination-bullet {
                     background: linear-gradient(135deg, #6366f1, #8b5cf6);

@@ -20,6 +20,9 @@ import mongodbPhpCert from "../assets/images/mongodb_php_certificate.png";
 import mongodbCsharpCert from "../assets/images/mongodb_csharp_certificate.png";
 import mongodbPythonCert from "../assets/images/mongodb_python_certificate.png";
 import mongodbJavaCert from "../assets/images/mongodb_java_certificate.png";
+import mongodbReplaceDeleteCert from "../assets/images/mongodb_replace_delete.png";
+import mongodbSecurityCert from "../assets/images/mongodb_security.png";
+import mongodbNodejsCert from "../assets/images/mongodb_nodejs.png";
 
 // GlowCard — applies radial glow directly as backgroundImage on the card element.
 // Layers on top of Tailwind's background-color with zero z-index/overflow issues.
@@ -111,6 +114,27 @@ const Certificates = () => {
             date: "Issued Jan 2026",
             link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/",
             image: mongodbJavaCert,
+        },
+        {
+            title: "MongoDB CRUD Operations: Replace and Delete Documents",
+            issuer: "MongoDB, Inc",
+            date: "Issued Jan 2026",
+            link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/",
+            image: mongodbReplaceDeleteCert,
+        },
+        {
+            title: "Self-Managed Database Security",
+            issuer: "MongoDB, Inc",
+            date: "Issued Jan 2026",
+            link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/",
+            image: mongodbSecurityCert,
+        },
+        {
+            title: "Connecting to MongoDB in Node.js",
+            issuer: "MongoDB, Inc",
+            date: "Issued Jan 2026",
+            link: "https://www.linkedin.com/in/irusha-dilshan-a15645354/details/certifications/",
+            image: mongodbNodejsCert,
         },
     ];
 

@@ -52,3 +52,13 @@ html, body {
 .glow-card:hover .glow-card-bg {
   opacity: 1;
 }
+
+/* Custom Animations for floating image */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

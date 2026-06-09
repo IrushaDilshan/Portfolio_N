@@ -5,8 +5,8 @@
   "type": "module",
   "homepage": "https://irushadilshan.github.io/Portfolio_N",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node init && vite",
+    "build": "node init && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

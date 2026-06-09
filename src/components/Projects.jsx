@@ -563,7 +563,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchGithubProjects = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/IrushaDilshan/repos?sort=pushed&direction=desc');
+        const response = await fetch('https://api.github.com/users/IrushaDilshan/repos?sort=updated');
         const data = await response.json();
 
         if (Array.isArray(data)) {
@@ -575,25 +575,51 @@ const Projects = () => {
             'Vehicle_Rental_App_Design_Figma'
           ]);
 
-          const githubProjects = data
-            .filter(repo =>
-              !manualLinks.has(repo.html_url) &&
-              !repo.fork &&
-              !excludedRepos.has(repo.name)
-            )
-            .map(repo => ({
-              title: repo.name.replace(/-/g, " ").replace(/_/g, " "),
-              description: repo.description || "A project available on GitHub.",
-              longDescription: repo.description || "A project available on GitHub.",
-              image: projectPlaceholder,
-              screenshots: [projectPlaceholder],
-              techStack: repo.language ? [repo.language] : [],
-              link: repo.html_url,
-              category: "Personal Project",
-              challenges: [],
-            }));
+          const potentialRepos = data.filter(repo =>
+            !manualLinks.has(repo.html_url) &&
+            !repo.fork &&
+            !excludedRepos.has(repo.name)
+          );
 
-          setProjects([...manualProjects, ...githubProjects]);
+          const githubProjectsPromises = potentialRepos.map(async (repo) => {
+            try {
+              const readmeRes = await fetch(`https://raw.githubusercontent.com/${repo.owner.login}/${repo.name}/${repo.default_branch}/README.md`);
+              if (!readmeRes.ok) return null;
+              
+              const readmeContent = await readmeRes.text();
+              const imgRegex = /!\[.*?\]\(\s*(.*?)\s*\)|<img[^>]+src\s*=\s*["'](.*?)["']/i;
+              const match = readmeContent.match(imgRegex);
+              
+              if (match) {
+                const imageUrl = match[1] || match[2];
+                if (!imageUrl) return null;
+                
+                let finalImageUrl = imageUrl;
+                if (!imageUrl.startsWith('http') && !imageUrl.startsWith('data:')) {
+                    const cleanPath = imageUrl.replace(/^\.\//, '').replace(/^\//, '');
+                    finalImageUrl = `https://raw.githubusercontent.com/${repo.owner.login}/${repo.name}/${repo.default_branch}/${cleanPath}`;
+                }
+
+                return {
+                  title: repo.name.replace(/-/g, " ").replace(/_/g, " "),
+                  description: repo.description || "A project available on GitHub.",
+                  longDescription: repo.description || "A project available on GitHub.",
+                  image: finalImageUrl,
+                  screenshots: [finalImageUrl],
+                  techStack: repo.language ? [repo.language] : [],
+                  link: repo.html_url,
+                  category: "Personal Project",
+                  challenges: [],
+                };
+              }
+              return null;
+            } catch (err) {
+              return null;
+            }
+          });
+
+          const githubProjectsWithImages = (await Promise.all(githubProjectsPromises)).filter(p => p !== null);
+          setProjects([...manualProjects, ...githubProjectsWithImages]);
         }
       } catch (error) {
         console.error("Error fetching GitHub projects:", error);
